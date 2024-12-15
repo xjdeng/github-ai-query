@@ -22,7 +22,7 @@ def generate_tree(directory, prefix=""):
             tree.append(generate_tree(path, next_prefix))
     return "\n".join(tree)
 
-def get_repo(query, repo_url, refresh = False, valid_extensions = [".py", ".md", ".txt"]):
+def get_repo(repo_url, refresh = False, valid_extensions = [".py", ".md", ".txt"]):
     if repo_url.lower().endswith(".git"):
         repo_url = repo_url[:-4]
     local_repo_dir = str(path(repo_url).name)
